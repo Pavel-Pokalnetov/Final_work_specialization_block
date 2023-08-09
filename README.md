@@ -55,9 +55,11 @@
 
 ## Решение
 пункты 1-2 https://github.com/Pavel-Pokalnetov/Final_work_specialization_block/blob/main/task-1-2/linux-comands.md
-
+  
 пункты 3-4 https://github.com/Pavel-Pokalnetov/Final_work_specialization_block/blob/main/task-3-4/linux-comands.md
-
+  
 диаграмма (п.5) https://github.com/Pavel-Pokalnetov/Final_work_specialization_block/blob/main/Diagramm-Class.png
+  
+пункт 7-12 (рпбота с MySQL) https://github.com/Pavel-Pokalnetov/Final_work_specialization_block/blob/main/task-8-12/sql-command.md
+  
 
-пункт 7-12 
