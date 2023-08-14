@@ -1,6 +1,7 @@
 package BaseClasses;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Animal {
@@ -9,7 +10,7 @@ public class Animal {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj==null) return false;
+        if (obj == null) return false;
         if (obj instanceof Animal) {
             return ((Animal) obj).getId().equals(this.getId());
         }
@@ -19,6 +20,7 @@ public class Animal {
     private String birthday;
     private ArrayList<String> commandList = null;
     private UUID id;
+
     public Animal(String name, String birthday, String type) {
         setName(name);
         setBirthday(birthday);
@@ -58,7 +60,7 @@ public class Animal {
 
     public String getJSON() {
 
-        return  null;
+        return null;
     }
 
     public String getName() {
@@ -79,5 +81,16 @@ public class Animal {
 
     public UUID getId() {
         return id;
+    }
+
+    public String getCommandTXT() {
+        if (this.commandList == null || this.commandList.isEmpty()) {
+            return "командам не обучен";
+        }
+        return String.join(",", this.getCommandList());
+    }
+
+    public void setCommandList(String commands) {
+        this.commandList.addAll(List.of(commands.split(",")));
     }
 }

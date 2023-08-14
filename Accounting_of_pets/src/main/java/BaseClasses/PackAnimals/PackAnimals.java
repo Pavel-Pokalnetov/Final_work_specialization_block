@@ -3,14 +3,29 @@ package BaseClasses.PackAnimals;
 import BaseClasses.Animal;
 
 public class PackAnimals extends Animal {
-    int tonnage;
+    private int tonnage;
 
     public PackAnimals(String name, String birthday, String type) {
-        super(name, birthday, type);
+        super(name, birthday, type,"");
     }
+
+    public PackAnimals(String name, String birthday, String type, String command) {
+        super(name, birthday, type, command);
+
+    }
+
+
 
     @Override
     public String toString() {
-        return super.toString()+"\n"+"Грузоподъемность: "+tonnage;
+        return super.toString() + "\n" + "Грузоподъемность: " + this.getTonnage();
+    }
+
+    public void setTonnage(int tonnage) {
+        this.tonnage = tonnage;
+    }
+
+    public int getTonnage() {
+        return tonnage;
     }
 }

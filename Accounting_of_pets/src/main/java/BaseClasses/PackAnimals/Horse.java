@@ -1,8 +1,11 @@
 package BaseClasses.PackAnimals;
 
+import java.util.ArrayList;
+
 public class Horse extends PackAnimals {
-    public Horse(String name, String birthday, int i) {
+    public Horse(String name, String birthday, int tonnage, String commands) {
         super(name,birthday,"лошадь");
-        tonnage = i;
+        setTonnage(tonnage);
+        setCommandList(commands);
     }
 }
