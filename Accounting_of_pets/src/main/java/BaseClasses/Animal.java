@@ -7,6 +7,9 @@ import java.util.UUID;
 public class Animal {
     private String name;
     private String type;
+    private String birthday;
+    private final ArrayList<String> commandList;
+    private final UUID id;
 
     @Override
     public boolean equals(Object obj) {
@@ -17,15 +20,14 @@ public class Animal {
         return false;
     }
 
-    private String birthday;
-    private ArrayList<String> commandList = null;
-    private UUID id;
 
     public Animal(String name, String birthday, String type) {
+        commandList = new ArrayList<>();
         setName(name);
         setBirthday(birthday);
         setType(type);
         this.id = UUID.randomUUID();
+
     }
 
     public void setName(String name) {
@@ -91,6 +93,7 @@ public class Animal {
     }
 
     public void setCommandList(String commands) {
+
         this.commandList.addAll(List.of(commands.split(",")));
     }
 }

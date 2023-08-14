@@ -6,11 +6,12 @@ public class PackAnimals extends Animal {
     private int tonnage;
 
     public PackAnimals(String name, String birthday, String type) {
-        super(name, birthday, type,"");
+        super(name, birthday, type);
     }
 
     public PackAnimals(String name, String birthday, String type, String command) {
-        super(name, birthday, type, command);
+        super(name, birthday, type);
+        setCommandList(command);
 
     }
 
