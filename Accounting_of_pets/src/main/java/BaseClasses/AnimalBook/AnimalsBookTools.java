@@ -33,12 +33,12 @@ public class AnimalsBookTools {
      * @param m
      */
     public static void print_animals_to_table(MainAnimalsBook m) {
-        int width = 83;
+        int width = 91;
         printLine(width);
-        System.out.printf("|%14s|%10s|%10s|%-41s|\n", "Тип животного", "Имя", "Дата рождения", "Выполняемые команды");
+        System.out.printf("| %14s | %10s | %10s | %-41s |\n", "Тип животного", "Имя", "Дата рождения", "Выполняемые команды");
         printLine(width);
         for (Animal a : m.getMainlist()) {
-            System.out.printf("|%14s|%10s|%13s|%-41s|\n", a.getType(),a.getName(),a.getBirthday(),a.getCommandTXT());
+            System.out.printf("| %14s | %10s | %13s | %-41s |\n", a.getType(),a.getName(),a.getBirthday(),a.getCommandTXT());
         }
         printLine(width);
     }
