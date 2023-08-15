@@ -1,4 +1,4 @@
-package BaseClasses.AnimalBook;
+package AppTools;
 
 import BaseClasses.Animal;
 

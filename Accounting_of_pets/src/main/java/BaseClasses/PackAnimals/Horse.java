@@ -11,4 +11,7 @@ public class Horse extends PackAnimals {
         super(name,birthday,"лошадь");
         setTonnage(tonnage);
     }
+    public  Horse(String name, String birthday){
+        super(name,birthday,"лошадь");
+    }
 }

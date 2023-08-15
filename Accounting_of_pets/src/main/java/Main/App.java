@@ -1,31 +1,20 @@
 package Main;
 
-import BaseClasses.Animal;
-import BaseClasses.AnimalBook.AnimalsBookTools;
-import BaseClasses.AnimalBook.MainAnimalsBook;
-import BaseClasses.HomeAnimals.Cat;
-import BaseClasses.PackAnimals.Horse;
+import AppTools.MainAnimalsBook;
+import AppTools.Menu.CMenu;
+import AppTools.Menu.DelAnimals;
+import AppTools.Menu.ViewAnimalsTable;
+import AppTools.Menu.AddAnimals;
 
 public class App {
     public static void main(String[] args) {
-//        MainAnimalsBook animals_storage = new MainAnimalsBook("Загон 1");
-//        animals_storage.add(new Horse("Рысь","2018/06/01", 120,"Рысью,Шагом,Стой,Лежать"));
-//        animals_storage.add(new Horse("Статный","2020/01/15", 70,"Рысью,Шагом,Стой,Лежать"));
-//        animals_storage.add(new Horse("Мурка","2022/01/01", 30));
-//
-//        AnimalsBookTools.print_animals_to_table(animals_storage);
-//
-//        while (true) {
-//            String s = CInput.read("Введи строку: ");
-//            System.out.println("Ответ: "+s);
-//            if (s.equals("Q")) break;
-//        }
-//    }
-
+        MainAnimalsBook animal_book = new MainAnimalsBook("Главная ");
         CMenu menu1 = new CMenu("Главное меню");
-        menu1.add('1',"первый");
-        menu1.add('2',"второй");
-        menu1.add('3',"третий");
+        menu1.addItem('1',"Вывести список животных",new ViewAnimalsTable(animal_book));
+        menu1.addItem('2',"Добавить животное в список",new AddAnimals(animal_book));
+        menu1.addItem('3',"Удалить животное из списка", new DelAnimals(animal_book));
+        menu1.setQuit('0',"Выход");
+        menu1.runMenu();
+}
 
-        System.out.println(menu1.run());
-}}
+}
