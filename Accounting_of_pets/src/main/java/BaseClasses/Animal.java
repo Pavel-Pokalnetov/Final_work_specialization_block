@@ -1,5 +1,7 @@
 package BaseClasses;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -20,6 +22,14 @@ public class Animal {
         return false;
     }
 
+
+    public Animal(String name, String type, String birthday, ArrayList<String> commandList, UUID id) {
+        this.name = name;
+        this.type = type;
+        this.birthday = birthday;
+        this.commandList = commandList;
+        this.id = id;
+    }
 
     public Animal(String name, String birthday, String type) {
         commandList = new ArrayList<>();
@@ -61,8 +71,9 @@ public class Animal {
     }
 
     public String getJSON() {
-
-        return null;
+        Gson gson = new Gson();
+        String json = gson.toJson(this);
+        return json;
     }
 
     public String getName() {

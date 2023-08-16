@@ -12,10 +12,7 @@ public class PackAnimals extends Animal {
     public PackAnimals(String name, String birthday, String type, String command) {
         super(name, birthday, type);
         setCommandList(command);
-
     }
-
-
 
     @Override
     public String toString() {
