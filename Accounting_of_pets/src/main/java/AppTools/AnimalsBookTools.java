@@ -13,6 +13,49 @@ import java.util.Iterator;
 
 
 public class AnimalsBookTools {
+
+    /**
+     * Удаляет животных по имени
+     *
+     * @param m
+     * @return
+     */
+    public static int del_by_name(MainAnimalsBook m, String name) {
+        int count = 0;
+        boolean fl0 = true;
+        for (Animal a : m.getMainlist()) {
+            if (a.getName().equals(name)) {
+                if (fl0) {
+                    System.out.println("Будут удалены:");
+                    fl0 = false;
+                }
+                System.out.printf("| %14s | %10s | %13s |\n", a.getType(), a.getName(), a.getBirthday());
+            }
+        }
+        if (fl0) {
+            System.out.println("Нечего удалять");
+            return 0;
+        }
+        String ansver = CInput.read("Удаляем?(Y/N): ");
+        if (ansver.isEmpty()) {
+            System.out.println("Неверный ввод");
+            return 0;
+        } else if (ansver.equalsIgnoreCase("Y")) {
+            //удаление
+            Iterator<Animal> iterator = m.getMainlist().iterator();
+            while (iterator.hasNext()){
+                if (iterator.next().getName().equals(name)){
+                    iterator.remove();
+                    count++;
+                }
+            }
+            return count;
+        }
+            System.out.println("Отмена");
+            return 0;
+        }
+
+
     /**
      * Удаляет животных по типу
      *
@@ -57,6 +100,11 @@ public class AnimalsBookTools {
         System.out.print("|\n");
     }
 
+    /**
+     * добавление животного в список
+     *
+     * @param animalsBook
+     */
     public static void addAnimalsDialog(MainAnimalsBook animalsBook) {
         System.out.println("Ручное добавление животного (для отмены введите --- в любом диалоге)");
         System.out.println("Укажите тип животного ");
