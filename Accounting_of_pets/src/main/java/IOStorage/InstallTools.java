@@ -1,4 +1,4 @@
-package Main;
+package IOStorage;
 
 import IOStorage.CreateTable;
 

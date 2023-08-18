@@ -43,17 +43,23 @@ public class AnimalsBookTools {
         } else if (ansver.equalsIgnoreCase("Y")) {
             //удаление
             Iterator<Animal> iterator = m.getMainlist().iterator();
-            while (iterator.hasNext()){
-                if (iterator.next().getName().equals(name)){
+            while (iterator.hasNext()) {
+                if (iterator.next().getName().equals(name)) {
                     iterator.remove();
+                    try (Counter counter = new Counter()) {
+                        counter.down();
+                    } catch (Exception e) {
+                        System.out.println("Ошибка");
+                        e.printStackTrace();
+                    }
                     count++;
                 }
             }
             return count;
         }
-            System.out.println("Отмена");
-            return 0;
-        }
+        System.out.println("Отмена");
+        return 0;
+    }
 
 
     /**
@@ -162,8 +168,14 @@ public class AnimalsBookTools {
             ((PackAnimals) animal).setTonnage(tonnage);
         }
         if ("нет".equals(commands.toLowerCase())) animal.setCommandList(commands);
+        try (Counter counter = new Counter()) {
+            animalsBook.add(animal);
+            counter.up();
 
-        animalsBook.add(animal);
-        System.out.println("Добавлено животное\n" + animal.toString());
+            System.out.println("Добавлено животное\n" + animal.toString());
+            System.out.println("Счетчик: "+counter.get());
+        } catch (Exception e) {
+            System.out.println("Ошибка в блоке счетчика");
+        }
     }
 }
