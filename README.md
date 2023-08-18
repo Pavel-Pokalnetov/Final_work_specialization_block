@@ -62,4 +62,8 @@
   
 пункт 7-12 (работа с MySQL) https://github.com/Pavel-Pokalnetov/Final_work_specialization_block/blob/main/task-8-12/sql-command.md
   
+пункт 13-15 (проект intelij idea на java c OpenJDK 20.0) https://github.com/Pavel-Pokalnetov/Final_work_specialization_block/tree/app/Accounting_of_pets
+(из-за кривости задания я сделал программу так, как я понял;  
+ в перспективе в программу добавлены классы для сохранения данных приложения в базе SQLite но в рабочем функционале огни отключены)
+ 
 
